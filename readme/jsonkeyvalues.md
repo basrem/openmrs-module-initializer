@@ -1,10 +1,10 @@
 ## Domain 'jsonkeyvalues'
-The **jsonkeyvalues** subfolder contains JSON configuration files that help provide custom configurations at runtime. Those JSON files are simple key values pairs, very much like global properties but that won't be persisted. This is how this domain may look like:
+The **jsonkeyvalues** subfolder contains JSON configuration files that help provide custom configurations at runtime. Those JSON files are simple key-value pairs, very much like global properties but that won't be persisted. This is how this domain may look like:
 ```bash
 jsonkeyvalues/
   └── config.json
 ```
-We envision its typical use as providing _identifiers_ of objects that are needed to configure other objects. For instance a report definition may depend on a certain concept, and although the report definition itself may never change, the concept used in the report definition may be different from an implementation to another.
+We envision its typical use as providing _identifiers_ of objects that are needed to configure other objects. For instance, a report definition may depend on a certain concept, and although the report definition itself may never change, the concept used in the report definition may be different from one implementation to another.
 
 ###### JSON key-values configuration file example:
 ```json
@@ -17,7 +17,7 @@ We envision its typical use as providing _identifiers_ of objects that are neede
   "main.report.active": "true"
 }
 ```
-The above configuration illustrates that a report (referred to as "main report") needs to know about three concepts: one defining the diagnoses, one defining the chief complaints and one defining the findings. And a JSON key-values config file can be used to expose those concepts to our distribution at runtime. For example:
+The above configuration illustrates that a report (referred to as "main report") needs to know about three concepts: one defining the diagnoses, one defining the chief complaints, and one defining the findings. A JSON key-values config file can be used to expose those concepts to our distribution at runtime. For example:
 ```java
 InitializerService is = Context.getService(InitializerService.class);
 
